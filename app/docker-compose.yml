@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest  
+    container_name: immobilier_db  
+    environment:
+      POSTGRES_USER: admin  
+      POSTGRES_PASSWORD: rajarabii1  
+      POSTGRES_DB: immobilier_db 
+    ports:
+      - "5433:5432"  
+    volumes:
+      - immobilier_db_data:/var/lib/postgresql/data  
+    networks:
+      - immobilier_network  
+
+  app:
+    build:
+      context: .  
+    container_name: immobilier_app  
+    depends_on:
+      - db  
+    environment:
+      DATABASE_URL: postgresql://admin:rajarabii1@db:5432/immobilier_db
+                    
+    networks:
+      - immobilier_network
+    volumes:
+      - .:/usr/src/app  # Monter le répertoire courant pour que l'app puisse accéder aux fichiers
+
+volumes:
+  immobilier_db_data:  # Volume pour stocker les données PostgreSQL
+
+networks:
+  immobilier_network:  # Réseau pour connecter l'application et la base de données
+    driver: bridge

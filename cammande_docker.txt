@@ -1,0 +1,16 @@
+---> pour connecter a ma base de donner
+docker-compose build
+docker-compose up
+
+si tu veux runner ton centenaire sans passer data a postgres
+
+docker start immobilier_db
+
+docker exec -it immobilier_db psql -U admin -d immobilier_db
+
+
+docker exec -it immobilier_app /bin/bash
+
+pour savoir le volume 
+
+docker volume ls 
