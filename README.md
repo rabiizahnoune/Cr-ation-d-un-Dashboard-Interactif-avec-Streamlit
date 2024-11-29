@@ -17,8 +17,8 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 Clonez ce dépôt sur votre machine locale :
 
 ```bash
-git clone https://github.com/ton-compte/projet-immobilier.git
-cd projet-immobilier
+git clone https://github.com/rabiizahnoune/Cr-ation-d-un-Dashboard-Interactif-avec-Streamlit
+cd Cr-ation-d-un-Dashboard-Interactif-avec-Streamlit
 ```
 
 ### 2. Créer et activer un environnement virtuel (facultatif mais recommandé)
